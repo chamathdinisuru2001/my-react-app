@@ -24,7 +24,7 @@ const Home = () => {
 
     const timer = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
-    }, 1000);
+    },1000);
 
     return () => clearInterval(timer);
   }, []);

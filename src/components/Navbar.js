@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { useTheme } from '../Context/ThemeContext';
 import { AppBar, Toolbar, Typography, Button, IconButton,Menu,MenuItem} from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -9,6 +9,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 const Navbar = () => {
     const{themeMode,toggleTheme} = useTheme();
     const[anchorEl,setAnchorEl] = useState(null);
+    const navigate = useNavigate();
 
     const handleAboutMenuOpen = (e) => {
       setAnchorEl(e.currentTarget);
@@ -20,7 +21,7 @@ const Navbar = () => {
 
     const handleAboutClick = () => {
       setAnchorEl(null);
-      window.location.href = '/about';
+      navigate('/about');
     };
 
   return (
